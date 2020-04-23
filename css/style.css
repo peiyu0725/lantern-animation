@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+
+body{
+  background-image: url(../img/back.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.lantern-box{
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  background-image: url(../img/lantern.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: calc(25vh - 5px);
+}
+
+.lantern-box.turn{
+  transition: all 2s ease-in-out;
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+
+.lantern-content{
+  position: absolute;
+  font-weight: 700;
+  top: 33%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  font-family: 'cwTeXFangSong', serif;
+}
+
+.lantern-content.turn{
+  animation-name: opacity;
+  animation-duration: 2s;
+}
+
+@keyframes opacity {
+  0%   {color: rgba(0, 0, 0, 1);}
+  25%   {color: rgba(0, 0, 0, 0.5);}
+  50%  {color: rgba(0,0,0,0);}
+  75%   {color: rgba(0, 0, 0, 0.5);}
+  100% {color: rgba(0,0,0,1);}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#skylantern-wall{
+  position: absolute;
+  top: 75vh;
+}
+
+.skylantern-box{
+  position: fixed;
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  background-image: url(../img/skyLantern.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(25vh - 5px);
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.skylantern-content{
+  padding: 0 14%;
+  padding-top: 8vh;
+  font-weight: 700;
+  margin: 0 auto;
+  font-size: 1.25vw;
+  line-height: 1.3vw;
+  font-family: 'cwTeXFangSong', serif;
+}
+
+.skylantern-box.fly{
+  transition: all 50s ease-in-out;
+  -webkit-transform: translate3d(200px,-90vh,200px);
+  transform: translate3d(200px,-90vh,200px);
+}
